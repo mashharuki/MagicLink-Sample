@@ -1,8 +1,8 @@
 
-import { useState, useRef } from "react"
-import { HStack, Box, VStack, Input, Button, Text } from "@chakra-ui/react"
-import { useWeb3 } from "../../context/Web3Context"
+import { Box, Button, HStack, Input, Text, VStack } from "@chakra-ui/react"
+import { useState } from "react"
 import { useUser } from "../../context/UserContext"
+import { useWeb3 } from "../../context/Web3Context"
 
 /**
  * SignMessage Component
@@ -32,13 +32,11 @@ const SignMessage = () => {
    */
   const handleSignMessage = async () => {
     if (user && web3) {
-      try {}
+      try {
         // Sign the message using the connected wallet
-        const signedMessage = await web3.eth.accounts.
-        
-        personal.sign(message, user, "")
+        const signedMessage = await web3.eth.accounts.sign(message, user);
         // Set the signature state with the signed message
-        setSignature(signedMessage)
+        setSignature(signedMessage.signature)
       } catch (error) {
         // Log any errors that occur during the signing process
         console.error("handleSignMessage:", error)
