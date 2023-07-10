@@ -1,7 +1,4 @@
 import { Magic } from "magic-sdk";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const {
     MAGIC_API_KEY,
