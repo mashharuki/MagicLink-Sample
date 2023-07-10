@@ -29,7 +29,7 @@ const WalletDetail = () => {
         const balance = await web3.eth.getBalance(user)
 
         // Convert the balance from Wei to Ether and set the state variable
-        setBalance(web3.utils.fromWei(balance).substring(0, 7))
+        setBalance(web3.utils.fromWei(balance, "wei").substring(0, 7))
       } catch (error) {
         console.error(error)
       }

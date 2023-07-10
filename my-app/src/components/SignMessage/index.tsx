@@ -32,9 +32,11 @@ const SignMessage = () => {
    */
   const handleSignMessage = async () => {
     if (user && web3) {
-      try {
+      try {}
         // Sign the message using the connected wallet
-        const signedMessage = await web3.eth.personal.sign(message, user, "")
+        const signedMessage = await web3.eth.accounts.
+        
+        personal.sign(message, user, "")
         // Set the signature state with the signed message
         setSignature(signedMessage)
       } catch (error) {
